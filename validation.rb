@@ -1,7 +1,10 @@
 module Validation
   
 def valid?
-   validation!
+    validation!
+    true
+  rescue StandardError
+    false
 end
 end
 
