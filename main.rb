@@ -23,7 +23,6 @@ class Menu
     puts "Введите название станции.Название вводится кирилицей, первая буква - заглавная, неменее 3 букв"
     name = gets.chomp
     station = Station.new(name)
-    station.valid?
     rescue StandardError => e
     puts "Error #{e.inspect}"
     retry
@@ -38,7 +37,6 @@ class Menu
     puts "Номер(кирилица) -3 буквы или цифры в любом порядке+необязательный дефис+2 буквы или цифры"
     number = gets.chomp
     train = PassengerTrain.new(number) 
-    train.valid?
     rescue StandardError => e
     puts "Error #{e.inspect}"
     retry
@@ -54,7 +52,6 @@ class Menu
     puts "Номер(кирилица)-3 буквы или цифры в любом порядке+необязательный дефис+2 буквы или цифры"
     number = gets.chomp
     train = CargoTrain.new(number)
-    train.valid?
     rescue StandardError => e
     puts "Error #{e.inspect}"
     retry
@@ -73,7 +70,6 @@ class Menu
     puts "Введите номер последней станции маршрута"
     last = gets.chomp.to_i
     route = Route.new(@stations[first], @stations[last])
-    route.valid?
     rescue StandardError => e
     puts "Error #{e.inspect}"
     retry
